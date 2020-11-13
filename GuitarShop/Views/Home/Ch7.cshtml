@@ -1,0 +1,55 @@
+﻿@{
+    string message = "Welcome!";
+    if (ViewBag.CustomerName != null)
+    {
+        message = "Welcome back!"; //not part of a model in ch 7 solution so does not display below
+    }
+
+    int day = 4;
+    switch (day)
+    {
+        case 1:
+            message = message + " Monday";
+            break;
+        case 2:
+            message = message + " Tuesday";
+            break;
+        case 3:
+            message = message + " Wednesday";
+            break;
+        case 4:
+            message = message + " Thursday";
+            break;
+        case 5:
+            message = message + " Friday";
+            break;
+        case 6:
+            message = message + " Saturday";
+            break;
+        case 7:
+            message = message + " Sunday";
+            break;
+    }
+
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Home-ch7</title>
+</head>
+<body>
+    <h1>@message</h1>
+    <p>Customer Name: @ViewBag.CustomerName</p>
+    <p>2 + 2 = @(2 + 2)</p>
+    <label for="month">Month:</label>
+    <select name="month" id="month">
+        @for (int month = 1; month <= 12; month++)
+        {
+            <option value="@month">@month</option>
+        }
+    </select>
+
+</body>
+</html>
+
